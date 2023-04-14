@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1087.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharma.app.pharmaproto.controller.ApproController">
+   <children>
+      <VBox prefHeight="618.0" prefWidth="1087.0">
+         <children>
+            <Pane prefHeight="36.0" prefWidth="1087.0" style="-fx-border-color: white; -fx-border-radius: 10;">
+               <children>
+                  <Label alignment="CENTER" layoutX="433.0" layoutY="-1.0" text="Approvisionnement">
+                     <font>
+                        <Font name="Roboto Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <HBox prefHeight="431.0" prefWidth="1087.0">
+               <children>
+                  <Pane prefHeight="431.0" prefWidth="538.0" style="-fx-border-color: white; -fx-border-radius: 10;">
+                     <children>
+                        <TableView fx:id="tblViewApproCumul" layoutY="216.0" prefHeight="175.0" prefWidth="536.0" style="-fx-background-radius: 10;">
+                          <columns>
+                            <TableColumn prefWidth="30.0" style="-fx-background-radius: 2;" text="#" />
+                            <TableColumn prefWidth="85.0" style="-fx-background-radius: 2;" text="Medicament" />
+                              <TableColumn style="-fx-background-radius: 2;" text="Fournisseur" />
+                              <TableColumn prefWidth="40.0" style="-fx-background-radius: 2;" text="QteCommande" />
+                              <TableColumn prefWidth="40.0" style="-fx-background-radius: 2;" text="QteRecue" />
+                              <TableColumn prefWidth="64.0" style="-fx-background-radius: 2;" text="Statut" />
+                              <TableColumn style="-fx-background-radius: 2;" text="DateReçue" />
+                              <TableColumn prefWidth="60.0" style="-fx-background-radius: 2;" text="Prix" />
+                              <TableColumn prefWidth="60.0" style="-fx-background-radius: 2;" text="PrixFournisseur" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="14.0" layoutY="31.0" text="Liste des medicament au seuil de 20:">
+                           <font>
+                              <Font name="Roboto Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="listViewMedicament" layoutX="11.0" layoutY="46.0" onMouseClicked="#onListViewMouseClicked" prefHeight="157.0" prefWidth="200.0" style="-fx-background-radius: 10;" />
+                        <Button fx:id="btnLancer" disable="true" layoutX="216.0" layoutY="55.0" mnemonicParsing="false" onAction="#btnLancerOnAction" prefHeight="36.0" prefWidth="78.0" style="-fx-background-color: #83c5be; -fx-background-radius: 15;" text="Lancer">
+                           <font>
+                              <Font name="Roboto" size="15.0" />
+                           </font></Button>
+                        <Button fx:id="btnAjoutTotal" disable="true" layoutX="406.0" layoutY="391.0" mnemonicParsing="false" onAction="#btnAjoutTotalOnAction" prefHeight="36.0" prefWidth="124.0" style="-fx-background-color: #83c5be; -fx-background-radius: 15;" text="Ajouter le total">
+                           <font>
+                              <Font name="Roboto" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="137.0" layoutY="3.0" text="Placement d'Approvisionnement">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMessagePlacement" alignment="CENTER" layoutX="216.0" layoutY="184.0" prefHeight="19.0" prefWidth="316.0">
+                           <font>
+                              <Font name="Roboto Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="431.0" prefWidth="553.0" style="-fx-border-color: white; -fx-border-radius: 10;">
+                     <children>
+                        <TableView fx:id="tblAppro" layoutX="4.0" layoutY="40.0" prefHeight="351.0" prefWidth="546.0">
+                           <columns>
+                              <TableColumn prefWidth="30.0" style="-fx-background-radius: 2;" text="Id" />
+                              <TableColumn prefWidth="85.0" style="-fx-background-radius: 2;" text="Medicament" />
+                              <TableColumn style="-fx-background-radius: 2;" text="Fournisseur" />
+                              <TableColumn prefWidth="40.0" style="-fx-background-radius: 2;" text="QteCommande" />
+                              <TableColumn prefWidth="40.0" style="-fx-background-radius: 2;" text="QteReçue" />
+                              <TableColumn prefWidth="64.0" style="-fx-background-radius: 2;" text="Statut" />
+                              <TableColumn minWidth="0.0" prefWidth="0.0" style="-fx-background-radius: 2;" text="Statut" />
+                              <TableColumn minWidth="0.0" style="-fx-background-radius: 2;" text="DateReçue" />
+                              <TableColumn prefWidth="60.0" style="-fx-background-radius: 2;" text="Prix" />
+                              <TableColumn prefWidth="60.0" style="-fx-background-radius: 2;" text="PrixFournisseur" />
+                           </columns>
+                        </TableView>
+                        <Label alignment="CENTER" layoutX="168.0" layoutY="3.0" text="Liste d'Approvisionnement">
+                           <font>
+                              <Font name="Roboto Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <Pane prefHeight="150.0" prefWidth="1087.0" style="-fx-border-color: white; -fx-border-radius: 10;">
+               <children>
+                  <Label alignment="CENTER" layoutX="434.0" layoutY="9.0" text="Formulaire d'Approvisionnement">
+                     <font>
+                        <Font name="Roboto Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="44.0" layoutY="32.0" text="*Medicament :">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="205.0" layoutY="32.0" text="*Fournisseur :">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbMedicament" layoutX="14.0" layoutY="51.0" prefHeight="36.0" prefWidth="150.0" />
+                  <ComboBox fx:id="cbFournisseur" layoutX="174.0" layoutY="51.0" prefHeight="36.0" prefWidth="150.0" />
+                  <Label layoutX="389.0" layoutY="32.0" text="*Quantité :">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="qteCommande" layoutX="375.0" layoutY="51.0" prefHeight="36.0" prefWidth="91.0" />
+                  <TextField fx:id="qteRecu" layoutX="375.0" layoutY="106.0" prefHeight="36.0" prefWidth="91.0" />
+                  <Label layoutX="339.0" layoutY="87.0" text="Quantité Reçue(Si déjà) :">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="534.0" layoutY="87.0" text="Date Reçue(Si déjà) :">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="dateRecu" layoutX="515.0" layoutY="106.0" prefHeight="36.0" prefWidth="175.0" />
+                  <Label layoutX="542.0" layoutY="32.0" text="*Prix de Vente :">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="prixVente" layoutX="515.0" layoutY="51.0" prefHeight="36.0" prefWidth="149.0" />
+                  <Label layoutX="705.0" layoutY="32.0" text="*Prix du Fournisseur :">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="prixFournisseur" layoutX="698.0" layoutY="51.0" prefHeight="36.0" prefWidth="149.0" />
+                  <Label layoutX="916.0" layoutY="32.0" text="*Statut :">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbStatut" layoutX="868.0" layoutY="51.0" prefHeight="36.0" prefWidth="150.0" />
+                  <Button fx:id="btnAjout" layoutX="956.0" layoutY="106.0" mnemonicParsing="false" onAction="#btnAjoutOnAction" prefHeight="36.0" prefWidth="124.0" style="-fx-background-color: #83c5be; -fx-background-radius: 15;" text="Ajouter">
+                     <font>
+                        <Font name="Roboto" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="618.0" prefWidth="1087.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pharma.app.pharmaproto.controller.MedicamentController">
+<!--    Set the view for the Table-->
+
+    <TableView fx:id="tblMedicament" layoutX="18.0" layoutY="68.0" prefHeight="372.0" prefWidth="1062.0" scaleShape="false">
+        <columns>
+            <TableColumn fx:id="colRef" editable="false" prefWidth="65.0" text="Référence" />
+            <TableColumn fx:id="colNom" prefWidth="90.0" text="Nom" />
+            <TableColumn fx:id="colDose" prefWidth="75.0" text="Dose" />
+            <TableColumn fx:id="colFamille" prefWidth="95.0" text="Famille" />
+            <TableColumn fx:id="colQuantite" prefWidth="73.60003662109375" text="Quantité" />
+            <TableColumn fx:id="colPrix" prefWidth="54.39996337890625" text="Prix" />
+            <TableColumn fx:id="colFournisseur" prefWidth="84.0" text="Fournisseur" />
+            <TableColumn fx:id="colDateFabrication" prefWidth="132.0" text="Date de fabrication" />
+            <TableColumn fx:id="colDateExpiration" prefWidth="128.79998779296875" text="Date d'expiration" />
+            <TableColumn fx:id="colDescription" prefWidth="192.00006103515625" text="Description" />
+        </columns>
+
+
+    </TableView>
+
+<!-- Set the view to add new Meds-->
+    <Label layoutX="487.0" layoutY="14.0" prefHeight="38.0" prefWidth="124.0" text="MEDICAMENT">
+        <font>
+            <Font size="19.0" />
+        </font>
+    </Label>
+    <Pane layoutX="18.0" layoutY="440.0" prefHeight="170.0" prefWidth="1062.0">
+        <children>
+            <TextField fx:id="tfDose" layoutX="150.0" layoutY="27.0" prefHeight="38.0" prefWidth="78.0" promptText="Dose" />
+            <TextField fx:id="tfQuantite" layoutX="394.0" layoutY="25.0" prefHeight="38.0" prefWidth="90.0" promptText="Quantite" />
+            <TextField fx:id="tfNom" layoutX="28.0" layoutY="27.0" prefHeight="38.0" prefWidth="101.0" promptText="Nom" />
+            <TextField fx:id="tfPrix" layoutX="512.0" layoutY="25.0" prefHeight="38.0" prefWidth="78.0" promptText="Prix" />
+            <Button fx:id="btnAddDB" layoutX="789.0" layoutY="85.0" mnemonicParsing="false" onAction="#onAddDBclick" prefHeight="38.0" prefWidth="101.0" style="-fx-background-color: #83c5be;" text="ADD">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Button>
+            <ComboBox fx:id="cbFamille" layoutX="243.0" layoutY="27.0" prefHeight="38.0" prefWidth="124.0" promptText="Famille" visibleRowCount="100" />
+            <ComboBox fx:id="cbFournisseur" layoutX="618.0" layoutY="25.0" prefHeight="38.0" prefWidth="124.0" promptText="Fournisseur" />
+         <DatePicker fx:id="dpDateExpiration" layoutX="761.0" layoutY="25.0" prefHeight="38.0" prefWidth="175.0" promptText="Date d'expiration" />
+         <DatePicker fx:id="dpDateFabrication" layoutX="531.0" layoutY="85.0" prefHeight="38.0" prefWidth="175.0" promptText="Date de fabrication" />
+         <TextArea fx:id="taDescription" layoutX="144.0" layoutY="71.0" prefHeight="85.0" prefWidth="340.0" promptText="Description du médicament" />
+        </children>
+        <cursor>
+            <Cursor fx:constant="DEFAULT" />
+        </cursor>
+    </Pane>
+</AnchorPane>
